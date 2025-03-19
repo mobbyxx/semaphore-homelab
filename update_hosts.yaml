@@ -1,9 +1,9 @@
 - hosts: all
-  become: true
-  become_user: ansible
-  become_method: sudo
   tasks:
   - name: Update Packages
+    become: true
+    become_user: ansible
+    become_method: sudo
     apt:
       upgrade: yes
       update_cache: yes
