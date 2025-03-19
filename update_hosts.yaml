@@ -4,6 +4,7 @@
   become: true
   tasks:
     - name: Update packages
+      become: true
       apt:
         update_cache: yes
         upgrade: dist
