@@ -1,10 +1,4 @@
 - hosts: all
-  tasks:
-  - name: Update Packages
-    become: true
-    become_user: ansible
-    become_method: sudo
-    apt:
-      upgrade: yes
-      update_cache: yes
-      cache_valid_time: 86400 #One day
+- name: Run the equivalent of "apt-get update" as a separate step
+  ansible.builtin.apt:
+    update_cache: yes
