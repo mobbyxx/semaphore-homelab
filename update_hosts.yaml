@@ -2,9 +2,9 @@
 - name: Update all packages on Ubuntu
   hosts: all
   become: yes
+  become_method: su
   tasks:
     - name: Update packages
-      become: yes
       apt:
         update_cache: yes
         upgrade: dist
